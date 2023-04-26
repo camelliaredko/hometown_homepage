@@ -72,6 +72,11 @@ main aside {
     color:rgb(67, 67, 67);
 }
 
+.hidden {
+    /* The text doesn't get rendered at all with display: none */
+    display: none; 
+    visibility: hidden;
+}
 
 /* mobile styles */
 @media only screen and (min-width: 0) and (max-width: 40em) { 

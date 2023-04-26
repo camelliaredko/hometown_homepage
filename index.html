@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
     <title>East Lansing</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header>
@@ -21,8 +21,9 @@
     </header>
     <main>
       <section>
+        <h2>Attractions</h2>
         <article>
-          <h2>4-H Children's Garden</h2>
+          <h3>4-H Children's Garden</h3>
           <p>
             4-H Children's Garden is an outdoor garden complex inside Michigan
             State University. It first opened in 1993 and was the first garden
@@ -40,12 +41,23 @@
             crafts.
           </p>
         </article>
+        <article>
+          <h3>Eli and Edythe Broad Art Museum</h3>
+          <p>
+            The Eli and Edythe Broad Art Museum is an engaged public institution that reflects through art the longstanding global focus of Michigan State University. Expressly dedicated to exploring contemporary culture and ideas through the probing gaze of international artists, the MSU Broad is a place where artists’ ideas, words, and actions create a vibrant center for questioning and understanding the world. Committed to education, experimentation, and study, the MSU Broad is a laboratory for the new, grounded in a deep appreciation for the historical. The MSU Broad is committed to expanding, preserving, exhibiting, and interpreting its collection of artwork from ancient cultures to the present day.
+          </p>
+        </article>
+        <article>
+          <h3>Wharton Center for the Performing Arts</h3>
+          <p>
+            Wharton Center is Michigan’s largest performing arts venue with four unique stages (the Cobb Great Hall, Pasant Theatre, MSU Concert Auditorium and Fairchild Theatre) and plenty of things to do and see all season. Wharton Center is proud to bring the best Broadway shows, the finest classical musicians, unrivaled dance companies and an A-list of high profile performers to mid-Michigan. Wharton Center is the leading presenting venue among Big 10 institutions and has the largest programming schedule of any independent performing arts center affiliated with a university in the country. Wharton Center is also recognized internationally for world premier commissions. The Center is fortunate to hire artists to create new works in jazz, dance, and classical music that make a world debut at Wharton Center.
+          </p>
+        </article>
       </section>
       <aside>
         <img
           src="https://lansing501.com/community/east-lansing.jpg"
-          alt="Photo of East Lansing downtown area"
-        />
+          alt="Photo of East Lansing downtown area">
         <h2>East Lansing</h2>
         <p>
           East Lansing is a city in the U.S. state of Michigan. Most of the city
@@ -55,6 +67,16 @@
           well-known as the home of Michigan State University. The city is part
           of the Lansing–East Lansing metropolitan area.
         </p>
+        <a id="target" href="#">Read more...</a>
+        <p class="hidden">East Lansing is located on land that was an important junction of two major Native American groups: the Potawatomi and the Fox. By 1850, the Lansing and Howell Plank Road Company was established to connect a toll road to the Detroit and Howell Plank Road, improving travel between Detroit and Lansing, which cut right through what is now East Lansing. The toll road was finished in 1853, and included seven toll houses between Lansing and Howell.
+
+          Michigan State University was founded in 1855 and established in what is now East Lansing in 1857. For the first four decades, the students and faculty lived almost entirely on the college campus. A few commuted from Lansing, and that number increased when a streetcar line was built in the 1890s, but there were few places to live in the then-rural area surrounding the campus.
+          
+          That started to change in 1887, when professors William J. Beal and Rolla C. Carpenter created Collegeville, along what is now Harrison Road and Center and Beal Streets, north of Michigan Avenue. Few faculty were attracted to the location, and the first residents were "teamsters and laborers". In 1898, the College Delta subdivision (including what is now Delta Street) had the support of the college itself, which provided utilities, and several professors built homes there (one of which survives today at 243 W. Grand River Ave.). Other subdivisions followed.
+          
+          At that time, the post office address was "Agricultural College, Michigan". A school district encompassing the nascent community was created in 1900. In 1907, incorporation as a city was proposed under the name "College Park"; the legislature approved the charter but changed the name to "East Lansing". The first seven mayors, starting with Clinton D. Smith in 1907 and Warren Babcock in 1908, were professors or employees of the college.
+          
+          The city charter in 1907 prohibited the possession, sale, or consumption of alcoholic beverages, and East Lansing was a "dry" city until voters modified the charter provision in 1968. In the 21st Century, downtown East Lansing has enjoyed a construction boom. Multiple city center complexes have resulted in the redevelopment of large parts of the historic downtown area, at a greatly increased population density.</p>
       </aside>
     </main>
     <footer>
@@ -65,5 +87,33 @@
         </ul>
       </nav>
     </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) {
+        console.log("test");
+        // const myElement = document.getElementByID("main");
+        // myElement.addEventListener("click", function() {
+        //   console.log("clicked");
+        // });
+
+        const link = document.getElementById("target");
+        // const link = document.querySelector("#target");  // works like line above
+        const hiddenP = document.querySelector(".hidden");
+        // const hiddenP = document.querySelector("p.hidden");
+        // const hiddenP = document.querySelectorAll("hidden");
+
+        console.log(event);
+        console.log(link);
+        console.log(hiddenP);
+        // console.log(hiddenP[1]); // targets second hiddenP if you use const hiddenP = document.querySelectorAll(".hidden");
+        
+        link.addEventListener("click", function(event) {
+          // hiddenP.removeAttribute("id");
+          hiddenP.classList.remove("hidden");
+          // link.setAttribute("id", "hidden");
+          link.classList.add("hidden");
+          event.preventDefault() // page doesn't jump to top after clicking "Read more ..." by adding this as well as "event" in function(event)
+        });
+      });
+    </script>
   </body>
 </html>
